@@ -11,8 +11,7 @@ function M.add_sign(bufnr, text, line, id, group, priority)
   local sign_name = "Marks_" .. text
   if not M.sign_cache[sign_name] then
     M.sign_cache[sign_name] = true
-    vim.fn.sign_define(sign_name, { text = text, texthl = "MarkSignHL",
-                                    numhl = "MarkSignNumHL" })
+    vim.fn.sign_define(sign_name, { text = text, texthl = "MarkSignHL" })
   end
   vim.fn.sign_place(id, group, sign_name, bufnr, { lnum = line, priority = priority })
 end
